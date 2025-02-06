@@ -1,0 +1,19 @@
+# Каталоги и файлы, созданные Gradle
+.gradle/
+build/
+
+# Каталоги и файлы для Gradle wrapper
+gradle/wrapper/gradle-wrapper.jar
+
+# Каталоги и файлы для настроек IntelliJ IDEA
+.idea/
+*.iml
+
+# Файлы операционной системы (кэшированные или скрытые)
+.DS_Store       # macOS
+Thumbs.db       # Windows
+
+# Локальные файлы конфигурации пользователя
+*.log
+*.swp
+*.swo
