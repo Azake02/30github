@@ -1,3 +1,6 @@
+package tests;
+
+import config.ConfigManager;
 import io.restassured.RestAssured;
 import org.junit.jupiter.api.Test;
 
@@ -7,7 +10,7 @@ import static org.hamcrest.Matchers.equalTo;
 public class ApiTest {
     @Test
     void testExample(){
-        RestAssured.baseURI = "https://jsonplaceholder.typicode.com/";
+        RestAssured.baseURI = ConfigManager.get("baseUrl");
         given()
                 .when()
                 .get("posts/1")
