@@ -25,5 +25,11 @@ public class UserTests extends BaseTest{
                 .body("name", equalTo("John Doe"));
     }
 
+    @Test
+    void deleteUser(){
+        Response response = ApiClient.delete(USERS_ENDPOINT + "/1");
+        response.then()
+                .statusCode(200);
+    }
 
 }

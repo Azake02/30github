@@ -21,4 +21,11 @@ public class ApiClient {
                 post(endpoint);
     }
 
+    public static Response delete(String endpoint){
+        return given()
+                .contentType(ContentType.JSON)
+                .when().
+                delete(endpoint);
+    }
+
 }
