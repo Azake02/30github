@@ -20,11 +20,11 @@ public class PostTests extends BaseTest {
                 .body("body", equalTo(post.getBody()));
     }
 
-//    @ParameterizedTest
-//    @MethodSource("providers.PostsDataProvidervalidDeletePostProvider")
-//    void deletePostTest(int postId) {
-//        Response response = PostsApi.deletePost(postId);
-//        response.then()
-//                .statusCode(200); // JSONPlaceholder всегда возвращает 200 на DELETE
-//    }
+    @ParameterizedTest
+    @MethodSource("providers.PostsDataProvider#validDeletePostProvider")
+    void deletePostTest(int postId) {
+        Response response = PostsApi.deletePost(postId);
+        response.then()
+                .statusCode(200); // JSONPlaceholder всегда возвращает 200 на DELETE
+    }
 }

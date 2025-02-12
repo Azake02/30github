@@ -17,4 +17,8 @@ public class PostsDataProvider {
                 new PostDto(null, 8, "Test title 8", "Test body 8")
         );
     }
+
+    public static Stream<Integer> validDeletePostProvider() {
+        return Stream.of(0, -1, 100, 101, 1);
+    }
 }
