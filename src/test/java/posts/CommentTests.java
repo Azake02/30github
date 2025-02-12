@@ -1,4 +1,4 @@
-package tests;
+package posts;
 
 import api.ApiClient;
 import io.restassured.response.Response;

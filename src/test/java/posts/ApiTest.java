@@ -1,4 +1,4 @@
-package tests;
+package posts;
 
 import api.ApiClient;
 import org.junit.jupiter.api.Test;

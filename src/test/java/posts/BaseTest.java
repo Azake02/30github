@@ -1,4 +1,4 @@
-package tests;
+package posts;
 
 import config.ConfigManager;
 import io.restassured.RestAssured;
