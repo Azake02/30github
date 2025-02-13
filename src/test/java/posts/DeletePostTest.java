@@ -13,5 +13,4 @@ public class DeletePostTest extends BaseTest{
         response.then()
                 .statusCode(200);
     }
-
 }

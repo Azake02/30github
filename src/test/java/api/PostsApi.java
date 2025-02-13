@@ -1,5 +1,6 @@
 package api;
 
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 import static io.restassured.RestAssured.given;
@@ -7,6 +8,9 @@ import static io.restassured.RestAssured.given;
 import dto.PostDto;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class PostsApi {
     private static final String POSTS_ENDPOINT = "/posts";
@@ -35,5 +39,15 @@ public class PostsApi {
                 .then()
                 .extract()
                 .response();
+    }
+
+    public static List<PostDto> getAllPosts(){
+        Response response = RestAssured.given()
+                .get(POSTS_ENDPOINT)
+                .then()
+                .statusCode(200)
+                .extract()
+                .response();
+        return Arrays.asList(response.as(PostDto[].class));
     }
 }
