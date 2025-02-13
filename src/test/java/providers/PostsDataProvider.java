@@ -18,6 +18,14 @@ public class PostsDataProvider {
         );
     }
 
+    public static Stream<PostDto> invalidCreatePostProvider(){
+        return Stream.of(
+                new PostDto(1, null, "Test title 1", "Test body 1"),
+                new PostDto(1, 1, null, "Test body 2"),
+                new PostDto(1, 1, "Test title 3", null)
+        );
+    }
+
     public static Stream<Integer> validDeletePostProvider() {
         return Stream.of(0, -1, 100, 101, 1);
     }

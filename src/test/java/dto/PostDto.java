@@ -1,4 +1,3 @@
-
 package dto;
 
 public class PostDto {
@@ -7,9 +6,9 @@ public class PostDto {
     private String title;
     private String body;
 
-    public PostDto() {
-        // Пустой конструктор нужен для десериализации
-    }
+//    public PostDto() {
+//        // Пустой конструктор нужен для десериализации
+//    }
 
     public PostDto(Integer id, Integer userId, String title, String body) {
         this.id = id;
