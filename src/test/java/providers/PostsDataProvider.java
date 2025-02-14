@@ -1,6 +1,7 @@
 package providers;
 
 import dto.PostDto;
+import org.junit.jupiter.params.provider.Arguments;
 
 import java.util.stream.Stream;
 
@@ -28,5 +29,14 @@ public class PostsDataProvider {
 
     public static Stream<Integer> validDeletePostProvider() {
         return Stream.of(0, -1, 100, 101, 1);
+    }
+
+    public static Stream<Arguments> validPatchAndPutProvider(){
+        return Stream.of(
+                Arguments.of(new PostDto(null, null, "new title", null)),
+                Arguments.of(new PostDto(null, null, null, "new body")),
+                Arguments.of(new PostDto(null, 3, null, null)),
+                Arguments.of( new PostDto(4, null, null, null))
+        );
     }
 }

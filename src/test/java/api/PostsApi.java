@@ -31,16 +31,6 @@ public class PostsApi {
                 .post(POSTS_ENDPOINT);
     }
 
-    public static Response deletePost(int postId) {
-        return given()
-                .header("Accept", "application/json") // Явно указываем ожидаемый формат ответа
-                .when()
-                .delete(POSTS_ENDPOINT + "/" + postId)
-                .then()
-                .extract()
-                .response();
-    }
-
     public static List<PostDto> getAllPosts(){
         Response response = RestAssured.given()
                 .get(POSTS_ENDPOINT)
