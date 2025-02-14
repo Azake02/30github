@@ -30,11 +30,21 @@ public class WordFrequencyCounter {
                 .collect(Collectors.toList());
 
         // Логируем результат
-//        logger.info("Топ {} слов:", limit);
-//        int index = 1;
+        logger.info(() -> "Топ " + limit + " слов:");
+        int index = 1;
         for (Map.Entry<String, Integer> entry : topWords) {
-//            logger.info("{}. {} - {}");
+            int finalIndex = index++; // Локальная переменная нужна, так как внутри лямбды index не изменится
+            logger.info(() -> finalIndex + ". " + entry.getKey() + " - " + entry.getValue());
         }
+
+        System.out.println("Топ " + limit + " слов:");
+
+        int index1 = 1;
+        for (Map.Entry<String, Integer> entry : topWords) {
+            int finalIndex = index1++; // Локальная переменная для использования в лямбде
+            System.out.println(finalIndex + ". " + entry.getKey() + " - " + entry.getValue());
+        }
+
 
         return topWords;
     }
