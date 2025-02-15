@@ -5,6 +5,7 @@ public class PostDto {
     private Integer userId;
     private String title;
     private String body;
+    private String test;
 
     public PostDto() {
         // Пустой конструктор нужен для десериализации

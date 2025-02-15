@@ -10,8 +10,16 @@ dependencies {
     testImplementation 'io.rest-assured:rest-assured:5.5.0'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
     implementation("com.fasterxml.jackson.dataformat:jackson-dataformat-yaml:2.16.1")
+    testImplementation 'io.qameta.allure:allure-junit5:2.25.0'  // Для JUnit 5
+    testImplementation 'io.qameta.allure:allure-rest-assured:2.25.0'  // Для RestAssured
 }
 
 test {
     useJUnitPlatform()
+    systemProperty("allure.results.directory", "build/allure-results")
+}
+
+tasks.register('allureReport', Exec) {
+    dependsOn test
+    commandLine "allure", "serve", "build/allure-results"
 }
