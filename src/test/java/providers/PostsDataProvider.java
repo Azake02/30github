@@ -3,6 +3,7 @@ package providers;
 import dto.PostDto;
 import org.junit.jupiter.params.provider.Arguments;
 
+import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
 public class PostsDataProvider {
@@ -38,5 +39,9 @@ public class PostsDataProvider {
                 Arguments.of(new PostDto(null, 3, null, null)),
                 Arguments.of( new PostDto(4, null, null, null))
         );
+    }
+
+    public static Stream<Integer> validGetAlbums(){
+        return IntStream.rangeClosed(1, 10).boxed();
     }
 }
