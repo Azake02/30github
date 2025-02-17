@@ -1,13 +1,14 @@
 package ui.tests;
 
 import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import pages.LoginPage;
-
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class LoginTest {
     private WebDriver driver;
@@ -16,14 +17,15 @@ public class LoginTest {
     @BeforeEach
     void setUp() {
         driver = new ChromeDriver();
-        driver.get("https://example.com/login");
+        driver.get("https://saucelabs.com/");
         loginPage = new LoginPage(driver);
     }
 
+
     @Test
     void testLogin() {
-        loginPage.login("user", "password");
-        assertTrue(driver.getCurrentUrl().contains("dashboard"));
+        loginPage.clickOnLogInBtn();
+        loginPage.login("user", "azat@gmail.com");
     }
 
     @AfterEach

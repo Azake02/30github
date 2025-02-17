@@ -15,7 +15,6 @@ dependencies {
     implementation 'org.slf4j:slf4j-simple:2.0.9'
     testImplementation 'org.seleniumhq.selenium:selenium-java:4.17.0'
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.7.0'
-
 }
 
 test {
