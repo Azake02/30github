@@ -26,7 +26,7 @@ public class LoginTest {
 
     @Test
     void testLogin() {
-        loginPage.login("Azat", "Amina21_");
+        loginPage.login();
     }
 
     @AfterEach

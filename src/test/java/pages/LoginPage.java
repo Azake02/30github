@@ -8,11 +8,11 @@ import org.openqa.selenium.support.PageFactory;
 public class LoginPage {
     protected WebDriver driver;
 
-    @FindBy(xpath = "//input[@id='idToken1']")
-    private WebElement usernameField;
+    @FindBy(xpath = "///a[contains(text(),'Sign in')]")
+    private WebElement signInBtn;
 
-    @FindBy(id = "idToken2")
-    private WebElement passwordField;
+    @FindBy(id = "//a[@data-qa='loginGoogleButton']")
+    private WebElement lgnGgl;
 
     @FindBy(xpath = "//input[@id='idToken2']")
     private WebElement loginBtn;
@@ -22,11 +22,8 @@ public class LoginPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void login(String username, String password) {
-        usernameField.click();
-        usernameField.sendKeys(username);
-        passwordField.click();
-        passwordField.sendKeys(password);
-        loginBtn.click();
+    public void login() {
+        signInBtn.click();
+        lgnGgl.click();
     }
 }
