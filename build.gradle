@@ -13,7 +13,7 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-junit5:2.25.0'  // Для JUnit 5
     testImplementation 'io.qameta.allure:allure-rest-assured:2.25.0'  // Для RestAssured
     implementation 'org.slf4j:slf4j-simple:2.0.9'
-    testImplementation 'org.seleniumhq.selenium:selenium-java:4.17.0'
+    implementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
     testImplementation 'io.github.bonigarcia:webdrivermanager:5.7.0'
 }
 
