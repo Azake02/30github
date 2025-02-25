@@ -14,7 +14,6 @@ dependencies {
     testImplementation 'io.qameta.allure:allure-rest-assured:2.25.0'  // Для RestAssured
     implementation 'org.slf4j:slf4j-simple:2.0.9'
     implementation 'org.seleniumhq.selenium:selenium-java:4.18.1'
-    testImplementation 'io.github.bonigarcia:webdrivermanager:5.7.0'
 }
 
 test {

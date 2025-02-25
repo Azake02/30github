@@ -1,26 +1,25 @@
 package ui.tests;
 
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import pages.LoginPage;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import pages.MainPage;
 import utils.Config;
 
 public class LoginTest {
+    private static final Logger log = LoggerFactory.getLogger(LoginTest.class);
     private WebDriver driver;
-    private LoginPage loginPage;
+    private MainPage loginPage;
 
     @BeforeEach
-    void setUp() throws InterruptedException {
+    void setUp() {
         driver = new ChromeDriver();
         driver.get(Config.BASE_URL);
-        driver.wait(5000);
-        loginPage = new LoginPage(driver);
+        loginPage = new MainPage(driver);
     }
 
 
@@ -31,7 +30,7 @@ public class LoginTest {
 
     @AfterEach
     void tearDown() {
-        driver.quit();
+//        driver.quit();
     }
 }
 
