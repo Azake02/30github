@@ -1,5 +1,6 @@
 package pages;
 
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +14,7 @@ import java.time.Duration;
 public class MainPage {
     protected WebDriver driver;
 
-    @FindBy(xpath = "//h1")
+    @FindBy(xpath = "//h3")
     public WebElement WelcomeMsg;
 
     @FindBy(xpath= "//ul/li/a[contains(text(), 'Basic Auth')]")
@@ -26,6 +27,7 @@ public class MainPage {
     }
 
     public void login() {
-        authLink.click();
+        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
+        Assertions.assertEquals("Basic Auth", WelcomeMsg.getText());
     }
 }
