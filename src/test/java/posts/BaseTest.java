@@ -1,21 +1,30 @@
 package posts;
 
 import config.ConfigManager;
+import io.github.bonigarcia.wdm.WebDriverManager;
 import io.restassured.RestAssured;
 import io.restassured.filter.log.LogDetail;
 import io.restassured.filter.log.RequestLoggingFilter;
 import io.restassured.filter.log.ResponseLoggingFilter;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import pages.MainPage;
+import utils.Config;
 
 public class BaseTest {
-    @BeforeAll
-    static void setup(){
-        RestAssured.baseURI = ConfigManager.get("baseUrl");
+    protected static WebDriver driver;
 
-        // Добавляем фильтры для логирования
+    @BeforeAll
+    public static void setup() {
+        // Настраиваем RestAssured
+        RestAssured.baseURI = ConfigManager.get("baseUrl");
         RestAssured.filters(
-                new RequestLoggingFilter(LogDetail.ALL),  // Логирует весь запрос
-                new ResponseLoggingFilter(LogDetail.ALL) // Логирует весь ответ
+                new RequestLoggingFilter(LogDetail.ALL),
+                new ResponseLoggingFilter(LogDetail.ALL)
         );
+        // ✅ Теперь driver уже создан, можно открыть сайт
+//        driver.get(Config.BASE_URL);
     }
 }
