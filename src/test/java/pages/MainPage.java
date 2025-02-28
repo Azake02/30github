@@ -9,8 +9,11 @@ import org.openqa.selenium.support.PageFactory;
 public class MainPage {
     protected WebDriver driver;
 
-    @FindBy(xpath = "//h3")
-    public WebElement WelcomeMsg;
+    @FindBy(xpath = "//a[contains(text(),\"A/B Testing\")]")
+    WebElement AbTesting;
+
+    @FindBy(xpath = "//a[contains(text(),\"Challenging DOM\")]")
+    WebElement DOM;
 
 
     public MainPage(WebDriver driver) {
@@ -18,8 +21,12 @@ public class MainPage {
         PageFactory.initElements(driver, this);
     }
 
-    public void login() {
-        driver.get("https://admin:admin@the-internet.herokuapp.com/basic_auth");
-        Assertions.assertEquals("Basic Auth", WelcomeMsg.getText());
+    public void clickOnAbLink(){
+        AbTesting.click();
     }
+
+    public void clickOnDomLnk(){
+        DOM.click();
+    }
+
 }
