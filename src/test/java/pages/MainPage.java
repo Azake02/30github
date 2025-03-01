@@ -15,6 +15,9 @@ public class MainPage {
     @FindBy(xpath = "//a[contains(text(),\"Challenging DOM\")]")
     WebElement DOM;
 
+    @FindBy(xpath = "//a[contains(text(),\"Add/Remove Elements\")]")
+    WebElement addRemoveElements;
+
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -27,6 +30,10 @@ public class MainPage {
 
     public void clickOnDomLnk(){
         DOM.click();
+    }
+
+    public void clickOnAddRemoveLink(){
+        addRemoveElements.click();
     }
 
 }
