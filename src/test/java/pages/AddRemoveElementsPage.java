@@ -13,17 +13,17 @@ public class AddRemoveElementsPage {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
-    @FindBy(id = "//a[@id='9fe770a0-d80e-013d-006f-46d8c6d661bc']")
-    WebElement bazBtn;
+    @FindBy(xpath = "//button[@onclick='addElement()']")
+    WebElement addElementBtn;
 
-    @FindBy(id = "//canvas[@id='canvas']")
-    WebElement canvasAnswer;
+    @FindBy(xpath = "//button[@onclick='deleteElement()']")
+    WebElement deleteElementBtn;
 
-    public void clickOnBuz(){
-        bazBtn.click();
+    public void clickOnAddElBtn(){
+        addElementBtn.click();
     }
 
-    public void getBazNummer(){
-        Assert.isTrue(canvasAnswer.isDisplayed(), "There is no canvas");
+    public void deleteElBtnExist(){
+        Assert.isTrue(deleteElementBtn.isDisplayed(), "There is no button");
     }
 }
