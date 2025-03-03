@@ -18,6 +18,9 @@ public class MainPage {
     @FindBy(xpath = "//a[contains(text(),\"Add/Remove Elements\")]")
     WebElement addRemoveElements;
 
+    @FindBy(xpath = "//a[contains(text(),\"Drag and Drop\")]")
+    WebElement dragAndDrop;
+
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -34,6 +37,10 @@ public class MainPage {
 
     public void clickOnAddRemoveLink(){
         addRemoveElements.click();
+    }
+
+    public void clickOnDragAndDropBtn(){
+        dragAndDrop.click();
     }
 
 }
