@@ -1,13 +1,13 @@
 package pages;
 
-import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-public class MainPage {
-    protected WebDriver driver;
+public class MainPage extends BasePage{
+    public MainPage(WebDriver driver) {
+        super(driver);
+    }
 
     @FindBy(xpath = "//a[contains(text(),\"A/B Testing\")]")
     WebElement AbTesting;
@@ -23,12 +23,6 @@ public class MainPage {
 
     @FindBy (xpath = "//a[contains(text(),\"Hovers\")]")
     WebElement hover;
-
-
-    public MainPage(WebDriver driver) {
-        this.driver = driver;
-        PageFactory.initElements(driver, this);
-    }
 
     public void clickOnAbLink(){
         AbTesting.click();
