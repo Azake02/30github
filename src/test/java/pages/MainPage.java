@@ -21,6 +21,9 @@ public class MainPage {
     @FindBy(xpath = "//a[contains(text(),\"Drag and Drop\")]")
     WebElement dragAndDrop;
 
+    @FindBy (xpath = "//a[contains(text(),\"Hovers\")]")
+    WebElement hover;
+
 
     public MainPage(WebDriver driver) {
         this.driver = driver;
@@ -43,4 +46,7 @@ public class MainPage {
         dragAndDrop.click();
     }
 
+    public void clickOnHoverLink(){
+        hover.click();
+    }
 }
