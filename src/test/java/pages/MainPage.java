@@ -24,6 +24,9 @@ public class MainPage extends BasePage{
     @FindBy (xpath = "//a[contains(text(),\"Hovers\")]")
     WebElement hover;
 
+    @FindBy (xpath = "//a[contains(text(),\"Key Presses\")]")
+    WebElement keyPresses;
+
     public void clickOnAbLink(){
         AbTesting.click();
     }
@@ -42,5 +45,9 @@ public class MainPage extends BasePage{
 
     public void clickOnHoverLink(){
         hover.click();
+    }
+
+    public void clickOnKeyPressesLink(){
+        keyPresses.click();
     }
 }
