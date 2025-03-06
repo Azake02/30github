@@ -1,22 +1,13 @@
 package ui.tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
 import pages.ABPage;
-import pages.MainPage;
-import posts.BaseTest;
 
-public class ABTest extends BaseTest {
 
-    @BeforeEach
-    void setUp() {
-        mainPage = new MainPage(driver);
-        abPage = new ABPage(driver);
-    }
+public class ABTest extends BaseUITest {
 
-    public ABPage abPage;
-    public MainPage mainPage;
+
+    public ABPage abPage = new ABPage(driver);
     @Test
     void AbTest() {
         mainPage.clickOnAbLink();

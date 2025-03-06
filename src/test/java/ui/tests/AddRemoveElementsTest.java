@@ -7,15 +7,8 @@ import pages.DOMPage;
 import pages.MainPage;
 import posts.BaseTest;
 
-public class AddRemoveElementsTest extends BaseTest {
-    public MainPage mainPage;
-    public AddRemoveElementsPage addRemoveElementsPage;
-    @BeforeEach
-    void setUp() {
-        mainPage = new MainPage(driver);
-        addRemoveElementsPage = new AddRemoveElementsPage(driver);
-    }
-
+public class AddRemoveElementsTest extends BaseUITest {
+    public AddRemoveElementsPage addRemoveElementsPage = new AddRemoveElementsPage(driver);
 
     @Test
     void delBtnExist() {

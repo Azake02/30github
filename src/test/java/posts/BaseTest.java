@@ -22,11 +22,5 @@ public class BaseTest {
                 new RequestLoggingFilter(LogDetail.ALL),
                 new ResponseLoggingFilter(LogDetail.ALL)
         );
-
-        WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver();
-        driver.manage().window().maximize();
-        driver.get("https://the-internet.herokuapp.com");
-        MainPage mainPage = new MainPage(driver);
     }
 }

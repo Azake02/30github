@@ -1,20 +1,10 @@
 package ui.tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import pages.HoverPage;
-import pages.MainPage;
-import posts.BaseTest;
 
-public class HoverTest extends BaseTest {
-    MainPage mainPage;
-    HoverPage hoverPage;
-
-    @BeforeEach
-    void setUp(){
-        mainPage = new MainPage(driver);
-        hoverPage = new HoverPage(driver);
-    }
+public class HoverTest extends BaseUITest {
+    HoverPage hoverPage = new HoverPage(driver);
 
     @Test
     void testDragAndDrop(){

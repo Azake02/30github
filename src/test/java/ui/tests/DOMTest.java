@@ -1,23 +1,13 @@
 package ui.tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.chrome.ChromeDriver;
-import pages.ABPage;
 import pages.DOMPage;
 import pages.MainPage;
 import posts.BaseTest;
 
-public class DOMTest extends BaseTest {
+public class DOMTest extends BaseUITest {
 
-    @BeforeEach
-    void setUp() {
-        mainPage = new MainPage(driver);
-        domPage = new DOMPage(driver);
-    }
-
-    public DOMPage domPage;
-    public MainPage mainPage;
+    public DOMPage domPage = new DOMPage(driver);
     @Test
     void getBazNmr() {
         mainPage.clickOnDomLnk();
