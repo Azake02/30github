@@ -17,6 +17,6 @@ public class BaseUITest {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://the-internet.herokuapp.com");
-        mainPage = new MainPage(driver);
+//        mainPage = new MainPage(driver);
     }
 }
